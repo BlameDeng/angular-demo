@@ -1,0 +1,20 @@
+<h2 [ngStyle]="{textAlign:'center'}">TemplateSyntax</h2>
+<h3>Property binding 属性绑定</h3>
+<div [ngClass]="className">Color</div>
+<h3>Event binding 事件绑定</h3>
+<button (click)="changeColor($event)">Change Color</button>
+<h3>Two way binding</h3>
+<app-width-change [(width)]="width"></app-width-change>
+<h3>ngSwitch 指令</h3>
+<button [ngStyle]="{margin:'10px', padding:'2px 8px'}" (click)="changeIndex(-1)">-</button><button [ngStyle]="{margin:'10px', padding:'2px 8px'}" (click)="changeIndex(1)">+</button>
+<div [ngSwitch]="index">
+    <div *ngSwitchCase="0">index: 0</div>
+    <div *ngSwitchCase="1">index: 1</div>
+    <div *ngSwitchCase="2">index: 2</div>
+    <div *ngSwitchCase="3">index: 3</div>
+</div>
+<h3>模板引用变量</h3>
+<div #divEl [ngStyle]="{width:'100px', height:'100px', backgroundColor:'#ddd'}"></div>
+<button (click)="changeDivSize(divEl)" [ngStyle]="{margin:'10px', padding:'2px 8px'}">ChangeDivSize</button>
+<h3>Pipe</h3>
+<div>{{ 5 | doubleNumber }}</div>

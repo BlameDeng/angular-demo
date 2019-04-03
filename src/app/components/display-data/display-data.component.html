@@ -1,0 +1,15 @@
+<h2 [ngStyle]="{textAlign:'center'}">DisplayData</h2>
+<h3>Interpolation 显示属性</h3>
+<p>xm 的地址是{{ xm.address }}</p>
+<h3>ngFor 显示列表</h3>
+<ul>
+    <li *ngFor="let person of personList; let i=index; trackBy:trackByPersonList" [ngStyle]="{borderBottom:'1px solid #ddd'}">
+        {{ i+1 }}. 姓名：{{ person.name }} 地址：{{ person.address }}
+    </li>
+</ul>
+<h3>ngIf 条件显示</h3>
+<button (click)="toggleVisible()">Toggle</button>
+<p>
+    visible 的值是 <span *ngIf="visible; else showFalse">true</span>
+    <ng-template #showFalse><span>false</span></ng-template>
+</p>

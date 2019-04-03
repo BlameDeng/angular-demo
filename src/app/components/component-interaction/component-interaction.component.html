@@ -1,0 +1,13 @@
+<h2 [ngStyle]="{textAlign:'center'}">ComponentInteraction</h2>
+<h3>通过输入型绑定把数据从父组件传到子组件</h3>
+<button (click)="increaseNumber()">Inc</button>
+<app-input-child name="Jack" [number]="number"></app-input-child>
+<h3>父组件监听子组件的事件</h3>
+<app-event-child (vote)="changeResult($event)"></app-event-child>
+<p>投票结果是：{{ result | displayResult }}</p>
+<h3>父组件调用 @ViewChild()</h3>
+<button [ngStyle]="{marginRight:'10px'}" (click)="start()">开始</button><button (click)="stop()">停止</button>
+<app-timer-child></app-timer-child>
+<h3>父子组件通过服务来通讯</h3>
+<p>countValue: {{ countValue }}</p>
+<app-count-child></app-count-child>
