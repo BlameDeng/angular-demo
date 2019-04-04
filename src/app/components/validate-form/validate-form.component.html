@@ -1,0 +1,8 @@
+<h2 [ngStyle]="{textAlign:'center'}">ValidateForm</h2>
+<h3>ReactiveFormValidate</h3>
+<form [formGroup]="reactiveForm" (ngSubmit)="handleReactiveFormSubmit()">
+    name: <input type="text" formControlName="name">
+    password: <input type="text" formControlName="password">
+    <button type="submit" [disabled]="reactiveForm.invalid">Submit</button>
+</form>
+<p *ngIf="reactiveForm.invalid&&reactiveForm.dirty&&reactiveForm.touched" [ngStyle]="{color:'red'}">ReactiveForm 验证不通过</p>

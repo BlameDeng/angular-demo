@@ -1,0 +1,6 @@
+<h2 [ngStyle]="{textAlign:'center'}">CustomDirectives</h2>
+<h3>Attribute Directive</h3>
+<p [appFontColor]="'red'">This is an attribute directive</p>
+<h3>Structural Directive</h3>
+<button (click)="toggleVisible()">ToggleVisible</button>
+<p *appMyIf="visible">Structural Directive</p>

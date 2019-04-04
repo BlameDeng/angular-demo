@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
+import { ReactiveFormsModule } from '@angular/forms'
 
 import { AppComponent } from './app.component'
 import { DisplayDataComponent } from './components/display-data/display-data.component'
@@ -17,7 +18,11 @@ import { ModalHostDirective } from './directives/modal-host.directive'
 import { ModalComponent } from './components/dynamic-component/modal/modal.component'
 import { AngularElementsComponent } from './components/angular-elements/angular-elements.component'
 import { PopupComponent } from './components/angular-elements/popup/popup.component'
-import { PopupService } from './service/popup.service'
+import { FontColorDirective } from './directives/font-color.directive'
+import { CustomDirectivesComponent } from './components/custom-directives/custom-directives.component'
+import { MyIfDirective } from './directives/my-if.directive'
+import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
+import { ValidateFormComponent } from './components/validate-form/validate-form.component'
 
 @NgModule({
   declarations: [
@@ -36,10 +41,15 @@ import { PopupService } from './service/popup.service'
     ModalHostDirective,
     ModalComponent,
     AngularElementsComponent,
-    PopupComponent
+    PopupComponent,
+    FontColorDirective,
+    CustomDirectivesComponent,
+    MyIfDirective,
+    ReactiveFormComponent,
+    ValidateFormComponent
   ],
   entryComponents: [ModalComponent, PopupComponent],
-  imports: [BrowserModule],
+  imports: [BrowserModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })

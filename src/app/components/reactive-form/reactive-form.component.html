@@ -1,0 +1,35 @@
+<h2 [ngStyle]="{textAlign:'center'}">ReactiveForm</h2>
+<form [formGroup]="profileForm" (ngSubmit)="submitProfileForm()">
+    <label>
+        firstName: <input type="text" formControlName="firstName">
+    </label>
+    <br><br>
+    <label>
+        lastName: <input type="text" formControlName="lastName">
+    </label>
+    <br><br>
+    <button type="submit">Submit</button>
+</form>
+<h3>profileList</h3>
+<ul>
+    <li *ngFor="let profile of profileList">
+        firstName: {{ profile.firstName }} lastName: {{ profile.lastName }}
+    </li>
+</ul>
+<form [formGroup]="personForm" (ngSubmit)="submitPersonForm()">
+    <label>
+        name: <input type="text" formControlName="name">
+    </label>
+    <br><br>
+    <label>
+        age: <input type="text" formControlName="age">
+    </label>
+    <br><br>
+    <button type="submit">Submit</button>
+</form>
+<h3>personList</h3>
+<ul>
+    <li *ngFor="let person of personList">
+        name: {{ person.name }} age: {{ person.age }}
+    </li>
+</ul>
